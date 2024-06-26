@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "smartpdf"
+dynamic = ["version"]
+description = "A tool for interacting with PDF documents using AI, allowing page-specific prompts and summaries. SmartPDF leverages Gemini API to provide intelligent responses to queries about PDF content, optimizing token usage and enabling focused analysis of specific page ranges."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = ["pdf", "ai", "gemini", "document analysis", "smart reading"]
+authors = [
+  { name = "Chencha Jacob", email = "jmokua@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "google-generativeai",
+  "pypdf",
+  "python-dotenv",
+  "pytest",
+]
+
+[project.urls]
+Documentation = "https://github.com/Chencha Jacob/smartpdf#readme"
+Issues = "https://github.com/Chencha Jacob/smartpdf/issues"
+Source = "https://github.com/Chencha Jacob/smartpdf"
+
+[tool.hatch.version]
+path = "src/smartpdf/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/smartpdf tests}"
+
+[tool.coverage.run]
+source_pkgs = ["smartpdf", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/smartpdf/__about__.py",
+]
+
+[tool.coverage.paths]
+smartpdf = ["src/smartpdf", "*/smartpdf/src/smartpdf"]
+tests = ["tests", "*/smartpdf/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

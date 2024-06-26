@@ -1,0 +1,18 @@
+.env
+setup.sh
+*.pyc
+*.swp
+.DS_Store
+.tox
+build
+.idea/*
+*.egg-info/
+dist/*
+__pycache__/
+
+#test files
+sample_pdfs/*
+log.md
+smartpdf.db
+test_gen.py
+Devcontent/*
