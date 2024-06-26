@@ -32,9 +32,9 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/Chencha Jacob/smartpdf#readme"
-Issues = "https://github.com/Chencha Jacob/smartpdf/issues"
-Source = "https://github.com/Chencha Jacob/smartpdf"
+Documentation = "https://github.com/prodeveloper/smartpdf?tab=readme-ov-file"
+Issues = "https://github.com/prodeveloper/smartpdf/issues"
+Source = "https://github.com/prodeveloper/smartpdf"
 
 [tool.hatch.version]
 path = "src/smartpdf/__about__.py"
