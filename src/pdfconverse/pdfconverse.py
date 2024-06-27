@@ -1,9 +1,9 @@
 from pypdf import PdfReader
 import google.generativeai as genai
 import dbm
-from .page import SmartPDFPage
+from .page import PDFConversePage
 
-class SmartPDF:
+class PDFConverse:
     """
     A class to interact with PDF files using Google's generative AI and a persistent cache.
 
@@ -24,6 +24,6 @@ class SmartPDF:
         self.page_start = page_start
         self.page_end = page_end
         self.setup_genai()
-        return SmartPDFPage(pdf_path=self.pdf_path, page_start=self.page_start, page_end=self.page_end,model=self.model)
+        return PDFConversePage(pdf_path=self.pdf_path, page_start=self.page_start, page_end=self.page_end,model=self.model)
     def PDF(self):
         return PdfReader(pdf_path=self.pdf_path)

@@ -1,7 +1,7 @@
-from src.smartpdf.gemini import GeminiModel
+from src.pdfconverse.gemini import GeminiModel
 import os
 from dotenv import load_dotenv
-from src.smartpdf.validators import PostFlightValidator
+from src.pdfconverse.validators import PostFlightValidator
 load_dotenv()
 
 class SafetyRating:

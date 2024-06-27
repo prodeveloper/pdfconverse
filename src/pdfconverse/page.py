@@ -4,7 +4,7 @@ from pypdf import PdfReader
 from .interfaces.model import Model
 from .validators import PreFlightValidator
 
-class SmartPDFPage:
+class PDFConversePage:
 
     def __init__(self,*,pdf_path:str, page_start: int, page_end: int, model:Model):
         self.page_start = page_start

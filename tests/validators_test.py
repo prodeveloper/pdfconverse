@@ -1,4 +1,4 @@
-from smartpdf.validators import PreFlightValidator, TextLengthError, KeyError
+from pdfconverse.validators import PreFlightValidator, TextLengthError, KeyError
 import pytest
 
 def test_text_length():

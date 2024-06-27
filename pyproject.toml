@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "smartpdf"
+name = "pdfconverse"
 version = "0.1.0"
-description = "A tool for interacting with PDF documents using AI, allowing page-specific prompts and summaries. SmartPDF leverages Gemini API to provide intelligent responses to queries about PDF content, optimizing token usage and enabling focused analysis of specific page ranges."
+description = "A tool for interacting with PDF documents using AI, allowing page-specific prompts and summaries. PDFConverse leverages Gemini API to provide intelligent responses to queries about PDF content, optimizing token usage and enabling focused analysis of specific page ranges."
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
@@ -32,31 +32,31 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/prodeveloper/smartpdf?tab=readme-ov-file"
-Issues = "https://github.com/prodeveloper/smartpdf/issues"
-Source = "https://github.com/prodeveloper/smartpdf"
+Documentation = "https://github.com/prodeveloper/pdfconverse?tab=readme-ov-file"
+Issues = "https://github.com/prodeveloper/pdfconverse/issues"
+Source = "https://github.com/prodeveloper/pdfconverse"
 
 [tool.hatch.version]
-path = "src/smartpdf/__about__.py"
+path = "src/pdfconverse/__about__.py"
 
 [tool.hatch.envs.types]
 extra-dependencies = [
   "mypy>=1.0.0",
 ]
 [tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/smartpdf tests}"
+check = "mypy --install-types --non-interactive {args:src/pdfconverse tests}"
 
 [tool.coverage.run]
-source_pkgs = ["smartpdf", "tests"]
+source_pkgs = ["pdfconverse", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/smartpdf/__about__.py",
+  "src/pdfconverse/__about__.py",
 ]
 
 [tool.coverage.paths]
-smartpdf = ["src/smartpdf", "*/smartpdf/src/smartpdf"]
-tests = ["tests", "*/smartpdf/tests"]
+pdfconverse = ["src/pdfconverse", "*/pdfconverse/src/pdfconverse"]
+tests = ["tests", "*/pdfconverse/tests"]
 
 [tool.coverage.report]
 exclude_lines = [

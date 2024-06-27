@@ -1,4 +1,4 @@
-from src.smartpdf.mock_model import MockModel
+from src.pdfconverse.mock_model import MockModel
 import os
 from dotenv import load_dotenv
 
