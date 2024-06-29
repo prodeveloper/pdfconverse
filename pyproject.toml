@@ -29,6 +29,7 @@ dependencies = [
   "pypdf",
   "python-dotenv",
   "pytest",
+  "pydantic",
 ]
 
 [project.urls]

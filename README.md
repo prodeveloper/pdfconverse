@@ -25,13 +25,14 @@ Here's a basic example of how to use PDFConverse:
 ```python
 import os
 from pdfconverse import PDFConverse
+from pdfconverse.models import FilePath,GeminiSetup
 
 # Set up your PDF path and Gemini API key. Assuming you have a .env file with the Gemini API key
-pdf_path = "./path/to/your/document.pdf"
-gemini_key = os.getenv("GEMINI_API_KEY")
+pdf_path = FilePath(path="./path/to/your/document.pdf")
+gemini_setup=GeminiSetup(api_key=os.getenv("GEMINI_API_KEY"),model="gemini-1.5-flash")
 
 # Initialize PDFConverse
-pdfconverse = PDFConverse(pdf_path=pdf_path, gemini_key=gemini_key)
+pdfconverse = PDFConverse(pdf_path=pdf_path, gemini_setup=gemini_setup)
 
 # Get a summary of the first page
 summary = pdfconverse.page(page_start=0, page_end=0).prompt("Give me a summary")
