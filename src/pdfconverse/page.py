@@ -2,7 +2,7 @@ from pypdf import PdfReader
 import dbm
 from pypdf import PdfReader
 from .interfaces.model import Model
-from .validators import PreFlightValidator,FailedToReadPDFError
+from .validators import PreFlightValidator,FailedToReadPDFError,GeminiError
 from .models import PDFText
 
 class PDFConversePage:
@@ -32,7 +32,10 @@ class PDFConversePage:
 
     def prompt(self,prompt: str):
         prompt = prompt + ":" + self.pdf_text.text
-        response = self.model.generate_content(prompt)
+        try:
+            response = self.model.generate_content(prompt)
+        except Exception as e:
+            raise GeminiError(f"Failed to generate content: {e}")
         return response.text
     
     
