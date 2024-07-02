@@ -13,3 +13,6 @@ class FilePath(BaseModel):
 class GeminiSetup(BaseModel):
     api_key: str
     model: str
+
+class PDFText(BaseModel):
+    text: str

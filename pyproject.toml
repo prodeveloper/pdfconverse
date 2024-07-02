@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pdfconverse"
-version = "0.1.1"
+version = "0.1.2"
 description = "A tool for interacting with PDF documents using AI, allowing page-specific prompts and summaries. PDFConverse leverages Gemini API to provide intelligent responses to queries about PDF content, optimizing token usage and enabling focused analysis of specific page ranges."
 readme = "README.md"
 requires-python = ">=3.8"

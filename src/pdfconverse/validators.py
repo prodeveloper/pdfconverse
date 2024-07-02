@@ -57,3 +57,7 @@ class PageOutOfBoundsError(SmartPDFError):
     def __init__(self, message):
         self.message = message
         super().__init__(self.message)
+class FailedToReadPDFError(SmartPDFError):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
