@@ -21,6 +21,7 @@ pip install pdfconverse
 ## Usage
 
 Here's a basic example of how to use PDFConverse:
+This example shows how to use it directly from files if you have acccess to underlying file system.
 
 ```python
 import os
@@ -28,12 +29,25 @@ from pdfconverse import PDFConverse
 from pdfconverse.models import FilePath,GeminiSetup
 
 # Set up your PDF path and Gemini API key. Assuming you have a .env file with the Gemini API key
-pdf_path = FilePath(path="./path/to/your/document.pdf")
+file_path = FilePath(path="./path/to/your/document.pdf")
 gemini_setup=GeminiSetup(api_key=os.getenv("GEMINI_API_KEY"),model="gemini-1.5-flash")
 
 # Initialize PDFConverse
-pdfconverse = PDFConverse(pdf_path=pdf_path, gemini_setup=gemini_setup)
+pdfconverse = PDFConverse(gemini_setup=gemini_setup,file_path=file_path)
 
+# Get a summary of the first page
+summary = pdfconverse.page(page_start=0, page_end=0).prompt("Give me a summary")
+print(summary)
+
+```
+
+This examples shows where you are streaming eg if you need to use s3
+
+```
+file_path = "./src/pdfconverse/samples/gemini_test_file.pdf"
+with open(file_path, "rb") as f:
+    pdf_bytes = BytesIO(f.read())
+pdfconverse = PDFConverse(gemini_setup=gemini_setup,bytes=pdf_bytes)
 # Get a summary of the first page
 summary = pdfconverse.page(page_start=0, page_end=0).prompt("Give me a summary")
 print(summary)

@@ -38,6 +38,8 @@ class PDFConversePage:
             raise GeminiError(f"Failed to generate content: {e}")
         return response.text
     
+
+
     
 
 
